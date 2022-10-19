@@ -16,11 +16,9 @@ $Hosts = @(
 $WslHostIP = ((PowerShell "wsl -d $DistroName hostname -I") | Out-String).Trim()
 
 Foreach ($hostname in $hosts) {
-  Write-Host $WslHostIP $hostname
-  Set-CHostsEntry -IPAddress $WslHostIP -HostName $hostname
+  Remove-CHostsEntry -HostName $hostname
+  Write-Host "remove:" $WslHostIP $hostname
 }
-
-# Remove-CHostsEntry -HostName 'myserver'
 
 Write-Host "Press any key to exit..."
 $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
