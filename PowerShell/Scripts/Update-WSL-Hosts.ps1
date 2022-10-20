@@ -14,7 +14,7 @@ $Hosts = @(
 
 $WslHostIP = ((wsl -d $DistroName hostname -I) | Out-String).Trim()
 
-Foreach ($HostName in $Hosts) {
+foreach ($HostName in $Hosts) {
   Set-CHostsEntry -HostName $HostName -IPAddress $WslHostIP
   Write-Host $WslHostIP $HostName
 }

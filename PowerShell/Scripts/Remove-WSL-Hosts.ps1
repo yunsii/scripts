@@ -14,7 +14,7 @@ $Hosts = @(
 
 $WslHostIP = (("wsl -d $DistroName hostname -I") | Out-String).Trim()
 
-Foreach ($HostName in $Hosts) {
+foreach ($HostName in $Hosts) {
   Remove-CHostsEntry -HostName $HostName
   Write-Host "remove:" $WslHostIP $HostName
 }
