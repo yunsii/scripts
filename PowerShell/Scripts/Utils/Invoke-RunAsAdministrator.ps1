@@ -1,4 +1,5 @@
-#Read more: https://www.sharepointdiary.com/2015/01/run-powershell-script-as-administrator-automatically.html#ixzz7i4zQ9sKj
+# Check Script is running with Elevated Privileges
+# Read more: https://www.sharepointdiary.com/2015/01/run-powershell-script-as-administrator-automatically.html#ixzz7i4zQ9sKj
 function Invoke-RunAsAdministrator {
   #Get current user context
   $CurrentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())

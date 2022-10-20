@@ -1,6 +1,5 @@
 . "$PSScriptRoot\Utils\Invoke-RunAsAdministrator.ps1"
 
-#Check Script is running with Elevated Privileges
 Invoke-RunAsAdministrator
 
 Import-Module "$PSScriptRoot\..\Modules\Carbon.2.11.0\Carbon"
@@ -13,7 +12,7 @@ $Hosts = @(
   "dev.app2.com"
 )
 
-$WslHostIP = ((PowerShell "wsl -d $DistroName hostname -I") | Out-String).Trim()
+$WslHostIP = ((wsl -d $DistroName hostname -I) | Out-String).Trim()
 
 Foreach ($hostname in $hosts) {
   Set-CHostsEntry -HostName $hostname -IPAddress $WslHostIP
