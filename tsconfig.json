@@ -5,5 +5,5 @@
     "baseUrl": ".",
     "outDir": "dist"
   },
-  "include": ["typescript"]
+  "include": ["TypeScript"]
 }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "ts": "tsx ./typescript/index.ts",
+    "ts": "tsx ./TypeScript/index.ts",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "lint-staged:lint": "eslint",
